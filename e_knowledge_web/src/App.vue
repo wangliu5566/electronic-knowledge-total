@@ -39,6 +39,7 @@ li {
   -moz-osx-font-smoothing: grayscale;*/
   height: auto;
   color: #333;
+  outline: none;
 }
 
 a {

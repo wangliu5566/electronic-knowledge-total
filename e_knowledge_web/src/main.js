@@ -28,10 +28,19 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 Vue.use(VueAwesomeSwiper)
 
+//自定义video.js语言
+import 'web/dataBaseDetail/videoLanguage.js'
+
 //引入视频播放器
 import VueVideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
+
 Vue.use(VueVideoPlayer)
+
+import Share from 'vue-social-share'
+import 'static/css/shareClient.css'
+Vue.use(Share)
+
 
 //引入vuex
 // import Vuex from 'vuex'

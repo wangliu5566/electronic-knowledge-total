@@ -4,6 +4,7 @@
 </template>
 <script>
 import 'videojs-flash'
+
 export default {
   data() {
     return {
@@ -15,14 +16,14 @@ export default {
         // videojs options
         muted: false,
         autoplay: true,
-        language: 'zh-CN',
+        language: 'custom',
         // playbackRates: [0.7, 1.0, 1.5, 2.0],
         height: this.videoHeight,
         sources: [{
           type: "video/mp4",
           src: '',
         }],
-        poster: "/static/images/landing.jpg",
+        // poster: "/static/images/landing.jpg",
         aspectRatio: '4:3', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
         fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
         notSupportedMessage: '此视频暂无法播放，请切换其他视频',
@@ -80,21 +81,25 @@ export default {
 
   watch:{
     'srcUrl':function(val,oldVal){
-      this.$set(this.playerOptions.sources[0],'src',val)
+      this.$set(this.playerOptions.sources[0],'src',val);
     }
-  }
+  },
 }
 
 </script>
 <style lang="less">
 .custom-video {
   padding: 5px;
+  
+  
 }
 
 .vjs-custom-skin>.video-js {
   width: 100%;
   font-family: "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft YaHei", "微软雅黑", sans-serif;
 }
+
+
 
 .vjs-custom-skin>.video-js .vjs-menu-button-inline.vjs-slider-active,
 .vjs-custom-skin>.video-js .vjs-menu-button-inline:focus,

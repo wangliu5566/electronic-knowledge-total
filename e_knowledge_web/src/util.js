@@ -185,7 +185,28 @@ export default {
       //   }
       // });
       window.open('/database/dataBaseDetail?id='+id,'_blank')
-    }
+    },
+
+    Vue.prototype.markCover = function(value) {
+      let data = value.toLowerCase();
+      if (data == 'jpg' || data == 'JPG' || data == 'jpeg' || data == 'JPEG' || data == 'png' || data == 'PNG' || data == 'gif' || data == 'GIF' || data == 'svg' || data == 'SVG') {
+        return '4'
+      } else if (data == 'mp4' || data == 'rm' || data == 'rmvb' || data == 'wmv' || data == 'avi' || data == '3gp' || data == 'mkv') {
+        return '6'
+      } else if (data == 'doc' || data == 'docx') {
+        return '2'
+      } else if (data == 'ppt' || data == 'pptx') {
+        return '3'
+      } else if (data == 'pdf') {
+        return '1'
+      } else if (data == 'txt') {
+        return '5'
+      } else if (data == 'xlsm' || data == 'xltx' || data == 'xltm' || data == 'xlt' || data == 'csv') {
+        return '7'
+      } else {
+        return '8'
+      }
+    };
 
   }
 }
